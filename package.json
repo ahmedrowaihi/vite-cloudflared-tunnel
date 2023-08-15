@@ -1,0 +1,97 @@
+{
+  "name": "vite-cloudflared-tunnel",
+  "version": "0.0.0",
+  "description": "A Vite Plugin on top of cloudflared-tunnel package to serve your localhost to the outside world during development.",
+  "homepage": "https://github.com/ahmedrowaihi/vite-cloudflared-tunnel",
+  "type": "module",
+  "author": {
+    "name": "Ahmed Rowaihi",
+    "email": "ahmedrowaihi1@gmail.com",
+    "url": "https://ahmedrowaihi.lol"
+  },
+  "files": [
+    "dist/index.js",
+    "lib/index.d.ts"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "vite",
+    "cloudflare",
+    "tunnel",
+    "cloudflared",
+    "cloudflared-tunnel",
+    "vite-plugin",
+    "vite-plugin-cloudflared-tunnel"
+  ],
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-xo": "^0.27.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "prettier": "3.0.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  },
+  "engines": {
+    "yarn": "> 1.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "build": "yarn lint && tsc -b",
+    "lint": "prettier . -w",
+    "prepack": "yarn build",
+    "release": "yarn prepack && release-it"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    }
+  },
+  "repository": "ahmedrowaihi/vite-cloudflared-tunnel",
+  "license": "MIT",
+  "dependencies": {
+    "cloudflared-tunnel": "^1.0.1"
+  },
+  "private": false
+}
