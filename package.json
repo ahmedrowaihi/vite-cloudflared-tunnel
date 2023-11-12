@@ -1,6 +1,6 @@
 {
   "name": "vite-cloudflared-tunnel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vite Plugin on top of cloudflared-tunnel package to serve your localhost to the outside world during development.",
   "homepage": "https://github.com/ahmedrowaihi/vite-cloudflared-tunnel",
   "type": "module",
