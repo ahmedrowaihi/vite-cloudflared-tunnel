@@ -91,7 +91,7 @@
   "repository": "ahmedrowaihi/vite-cloudflared-tunnel",
   "license": "MIT",
   "dependencies": {
-    "cloudflared-tunnel": "^1.0.1"
+    "cloudflared-tunnel": "^1"
   },
   "private": false
 }
